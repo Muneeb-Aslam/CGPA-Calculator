@@ -1,4 +1,4 @@
-export default function Input() {
+function InputGPA() {
     return (
         <div className="inputs">
             <input className="subjectName" type="text" placeholder="Subject Name" />
@@ -16,3 +16,13 @@ export default function Input() {
         </div>
     );
 }
+function InputCGPA(){
+    return (
+        <div className="cgpa-inputs">
+            <input className="subjectName" type="text" placeholder="Subject Name" />
+            <input className="credits" type="number" placeholder="SGPA" />
+        </div>
+    );
+}
+
+export {InputCGPA,InputGPA}
