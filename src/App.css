@@ -146,8 +146,11 @@ input::-webkit-inner-spin-button {
     .GPA-container{
         width: 80%;
     }
+    .inputs{
+        gap: 8%;
+    }
     .credits {
-        width: 90%;
+        width: 100%;
     }
     .subjectName{
         font-size: .5rem;
@@ -155,5 +158,20 @@ input::-webkit-inner-spin-button {
     }
     .options {
         width: 80%;
+    }
+}
+@media (max-width:768px){
+    .GPA-container{
+        width: 80%;
+    }
+    .credits {
+        width: 70%;
+    }
+    .subjectName{
+        font-size: .5rem;
+        width: 120%;
+    }
+    .options {
+        width: 60%;
     }
 }
