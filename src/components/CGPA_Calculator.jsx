@@ -10,8 +10,8 @@ export default function CGPA(props){
         <InputCGPA />
         <InputCGPA />
         <div className="icons">
-            <div className="add"><FontAwesomeIcon icon={faCirclePlus} /> {" "}Add Semester</div>
-            <div className="delete"><FontAwesomeIcon icon={faCircleXmark} /> {" "}Clear All</div>
+            <div className="add"><FontAwesomeIcon className="fontawesome" icon={faCirclePlus} /> {" "}Add Semester</div>
+            <div className="delete"><FontAwesomeIcon className="fontawesome" icon={faCircleXmark} /> {" "}Clear All</div>
         </div>
     </div>
     )

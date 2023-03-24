@@ -50,6 +50,9 @@ input::-webkit-inner-spin-button {
     width: 100%;
     gap: 10%;
 }
+.fontawesome{
+    background-color: inherit;
+}
 .subjects h4 {
     position: relative;
     background-color: inherit;
