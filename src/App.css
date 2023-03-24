@@ -142,3 +142,18 @@ input::-webkit-inner-spin-button {
     cursor: pointer;
     font-weight: 700;
 }
+@media (max-width:425px){
+    .GPA-container{
+        width: 80%;
+    }
+    .credits {
+        width: 90%;
+    }
+    .subjectName{
+        font-size: .5rem;
+        width: 120%;
+    }
+    .options {
+        width: 80%;
+    }
+}
