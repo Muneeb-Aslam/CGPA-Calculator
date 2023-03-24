@@ -19,7 +19,7 @@ function InputGPA() {
 function InputCGPA(){
     return (
         <div className="cgpa-inputs">
-            <input className="subjectName" type="text" placeholder="Subject Name" />
+            <input className="subjectName" type="text" placeholder="Semester No" />
             <input className="credits" type="number" placeholder="SGPA" />
         </div>
     );
