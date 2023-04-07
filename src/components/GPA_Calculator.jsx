@@ -4,6 +4,8 @@ import { InputGPA } from "./inputFields";
 import React from "react";
 
 export default function GPA(props) {
+    const [Input,setInput]=React.useState();
+    const [Grade,setGrade] = React.useState();
     const courseNum = [1];
     const [Course, setCourse] = React.useState(courseNum);
     const handleClick = ()=>{
@@ -24,7 +26,7 @@ export default function GPA(props) {
                 <h4>Credits</h4>
             </div>
             {Course.map((items,id)=>{
-                return <InputGPA key={id} />
+                return <InputGPA key={id} index={id}  />
             })}
             <div className="icons">
                 <div className="add"  onClick={addCourse}>

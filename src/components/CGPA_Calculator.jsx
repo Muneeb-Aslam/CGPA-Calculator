@@ -15,15 +15,18 @@ export default function CGPA(props){
     function handleClick(e){
         e.preventDefault()
         // const {SGPA0,SGPA1,SGPA2,SGPA3,SGPA4,SGPA5,SGPA6,SGPA7}=Input;
-        let sum=0,counter=0;
+        let sum=0,counter=0,flag=false;
         for(let i in Input){
             if(Input[i]){
+                flag=true;
                 sum=sum+parseFloat(Input[i])
                 counter+=1
             }
         }
-        dataResult.classList.add("show");
-        return props.set(()=> parseFloat(sum/counter).toFixed(2))
+        if(flag){
+            dataResult.classList.add("show");
+            return props.set(()=> parseFloat(sum/counter).toFixed(2))
+        }
     };
     const [addSemester, setaddSemester] = React.useState(SemesterNum);
     function AddSemester() {
