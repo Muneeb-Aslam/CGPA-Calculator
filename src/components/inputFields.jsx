@@ -12,7 +12,7 @@ function InputGPA() {
                 <option value="D">D</option>
                 <option value="F">F</option>
             </select>
-            <input className="credits" type="number" placeholder="Credits" />
+            <input className="credits" type="text" placeholder="Credits" />
         </div>
     );
 }
@@ -20,7 +20,7 @@ function InputCGPA(){
     return (
         <div className="cgpa-inputs">
             <input className="subjectName" type="text" placeholder="Semester No" />
-            <input className="credits" type="number" placeholder="SGPA" />
+            <input className="credits" type="text" placeholder="SGPA" />
         </div>
     );
 }
