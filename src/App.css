@@ -148,6 +148,24 @@ button{
     cursor: pointer;
     font-weight: 700;
 }
+.result.show{
+    display: flex;
+}
+.result{
+    padding: 1rem;
+    display: none;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: #046865;
+    justify-content: center;
+    align-items: center;
+    color: #03045e;
+    font-weight: 600;
+    font-size:2rem;
+    flex-direction: column;
+}
 @media (max-width:425px){
     .GPA-container{
         width: 80%;
