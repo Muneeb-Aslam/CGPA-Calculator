@@ -56,6 +56,10 @@ button{
 .fontawesome{
     background-color: inherit;
 }
+.trashicon{
+    background-color: inherit;
+    color: #d62246;
+}
 .subjects h4 {
     position: relative;
     background-color: inherit;
@@ -65,10 +69,15 @@ button{
 }
 .cgpa-inputs {
     background-color: inherit;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    align-items: center;
+    gap: 5%;
     width: 100%;
-    gap: 15%;
+}
+.deleteCourse{
+    cursor: pointer;
+    background-color: inherit;
+    width: 10%;
 }
 .inputs {
     background-color: inherit;
@@ -88,10 +97,10 @@ button{
     color: #046865;
 }
 .credits {
-    width: 50%;
+    width: 20%;
 }
 .subjectName{
-    width: 95%;
+    width: 50%;
 }
 .options {
     width: 50%;

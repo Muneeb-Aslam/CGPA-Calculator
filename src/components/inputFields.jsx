@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+
 function InputGPA() {
     return (
         <div className="inputs">
@@ -21,26 +24,28 @@ function InputGPA() {
     );
 }
 function InputCGPA(props) {
-    function handleChange(e){
-        return props.change((preValue) => {
-            return { ...preValue, [e.target.name]: e.target.value };
-        });
-    }
+    const index = props.index
     return (
         <div className="cgpa-inputs">
             <input
                 className="subjectName"
+                name="semNo"
+                value={props.valueSem}
                 type="text"
                 placeholder="Semester No"
+                onChange={(event) => props.change(event,index)}
             />
             <input
                 className="credits"
-                name={props.name}
+                name="credit"
                 type="text"
                 placeholder="SGPA"
-                value={props.value}
-                onChange={handleChange}
+                value={props.valueCredit}
+                onChange={(event) => props.change(event,index)}
             />
+            <div className="deleteCourse">
+                <FontAwesomeIcon icon={faTrash} className="trashicon"/>
+            </div>
         </div>
     );
 }
