@@ -25,7 +25,7 @@ function InputGPA(props) {
             </select>
             <input className="credits" type="text" placeholder="Credits" name="credit" value={props.valueCredit} 
             onChange={event=>props.change(event,props.index)}/>
-            <div className="deleteCourse">
+            <div className="deleteCourse" onClick={event=>props.handleDelete(event,props.index)}>
                 <FontAwesomeIcon icon={faTrash} className="trashicon"/>
             </div>
         </div>
@@ -52,7 +52,7 @@ function InputCGPA(props) {
                 onChange={(event) => props.change(event,index)}
             />
             <div className="deleteCourse">
-                <FontAwesomeIcon icon={faTrash} className="trashicon"/>
+                <FontAwesomeIcon icon={faTrash} className="trashicon" onClick={event=>props.handleDelete(event,props.index)}/>
             </div>
         </div>
     );

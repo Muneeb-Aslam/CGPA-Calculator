@@ -32,7 +32,12 @@ export default function CGPA(props) {
         dataResult.classList.remove("show");
         props.set(() => "");
     }
-
+    function TrashClicked(event,index){
+        const data = [...Input]
+        if(data.length>1)
+        data.splice(index,1)
+        setInput(data)
+    }
     return (
         <form className="GPA-container">
             <h3>Cumulative GPA</h3>
@@ -45,6 +50,7 @@ export default function CGPA(props) {
                             valueSem={input.semNo}
                             valueCredit={input.credit}
                             change={handlechange}
+                            handleDelete={TrashClicked}
                         />
                     );
                 })}

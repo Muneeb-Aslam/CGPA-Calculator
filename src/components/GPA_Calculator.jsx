@@ -35,12 +35,18 @@ export default function GPA(props) {
         dataResult.classList.remove("show");
         props.set(() => "");
     }
+    function TrashClicked(event,index){
+        const data = [...Input]
+        if(data.length>1)
+        data.splice(index,1)
+        setInput(data)
+    }
     return (
         <form className="GPA-container">
             <h3>Semester GPA</h3>
             {Input.map((items, id) => {
                 return <InputGPA key={id} index={id} change={handleChange} valueName={items.name} valueGrade={items.grade} 
-                valueCredit={items.credit} />
+                valueCredit={items.credit} handleDelete={TrashClicked}/>
             })}
             <div className="icons">
                 <div className="add" onClick={addCourse}>
