@@ -4,32 +4,46 @@ import { InputGPA } from "./inputFields";
 import React from "react";
 
 export default function GPA(props) {
-    const [Input,setInput]=React.useState();
-    const [Grade,setGrade] = React.useState();
-    const courseNum = [1];
-    const [Course, setCourse] = React.useState(courseNum);
-    const handleClick = ()=>{
-
+    const Grades = {"A":4,"B+":3.5,"B":3,"C+":2.5,"C":2,"D+":1.5,"D":1,"F":0}
+    const [Input, setInput] = React.useState([{ name: "", grade: "A", credit: "" }]);
+    const dataResult = document.querySelector("[data-result]");
+    const handleClick = (e) => {
+        e.preventDefault();
+        console.log(Input);
+        let sum = 0
+        let sumCredits = 0
+        for(let i in Input){
+            const grade = Grades[Input[i]["grade"]]
+            sumCredits+=(parseFloat(Input[i]["credit"]))
+            sum+=(parseFloat(Input[i]["credit"])*grade)
+        }
+        console.log(sum);
+        dataResult.classList.add("show");
+        return props.set(() => parseFloat(sum / sumCredits).toFixed(2));
+    }
+    function handleChange(event, index) {
+        const data = [...Input]
+        data[index][event.target.name]=event.target.value
+        setInput(data)
     }
     function addCourse() {
-        setCourse([...Course,Course[Course.length-1]+1])
+        const newField = { name: "", grade: "A", credit: "" }
+        setInput([...Input, newField])
     }
     function clearAll() {
-        setCourse([Course])
+        setInput([{ name: "", grade: "A", credit: "" }])
+        dataResult.classList.remove("show");
+        props.set(() => "");
     }
     return (
         <form className="GPA-container">
             <h3>Semester GPA</h3>
-            <div className="subjects">
-                <h4>Coruse Name</h4>
-                <h4>Grade</h4>
-                <h4>Credits</h4>
-            </div>
-            {Course.map((items,id)=>{
-                return <InputGPA key={id} index={id}  />
+            {Input.map((items, id) => {
+                return <InputGPA key={id} index={id} change={handleChange} valueName={items.name} valueGrade={items.grade} 
+                valueCredit={items.credit} />
             })}
             <div className="icons">
-                <div className="add"  onClick={addCourse}>
+                <div className="add" onClick={addCourse}>
                     <FontAwesomeIcon
                         className="fontawesome"
                         icon={faCirclePlus}

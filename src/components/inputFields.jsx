@@ -1,15 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-function InputGPA() {
+function InputGPA(props) {
     return (
         <div className="inputs">
             <input
                 className="subjectName"
                 type="text"
                 placeholder="Subject Name"
+                name="name"
+                value={props.valueName}
+                onChange={event=>props.change(event,props.index)}
             />
-            <select className="options" name="Grade" id="">
+            <select className="options" name="grade" id="" value={props.valueGrade} 
+            onChange={event=>props.change(event,props.index)}>
                 <option value="A">A</option>
                 <option value="B+">B+</option>
                 <option value="B">B</option>
@@ -19,7 +23,11 @@ function InputGPA() {
                 <option value="D">D</option>
                 <option value="F">F</option>
             </select>
-            <input className="credits" type="text" placeholder="Credits" />
+            <input className="credits" type="text" placeholder="Credits" name="credit" value={props.valueCredit} 
+            onChange={event=>props.change(event,props.index)}/>
+            <div className="deleteCourse">
+                <FontAwesomeIcon icon={faTrash} className="trashicon"/>
+            </div>
         </div>
     );
 }

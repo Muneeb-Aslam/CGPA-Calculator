@@ -19,7 +19,6 @@ export default function CGPA(props) {
         for (let i in Input) {
             sum = sum + parseFloat(Input[i]["credit"]);
         }
-        console.log(sum);
         dataResult.classList.add("show");
         return props.set(() => parseFloat(sum / Input.length).toFixed(2));
     }

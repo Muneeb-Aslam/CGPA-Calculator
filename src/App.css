@@ -46,26 +46,12 @@ button{
     font-size: 1.25rem;
     color: #03045e;
 }
-.subjects {
-    background-color: inherit;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-    gap: 10%;
-}
 .fontawesome{
     background-color: inherit;
 }
 .trashicon{
     background-color: inherit;
     color: #d62246;
-}
-.subjects h4 {
-    position: relative;
-    background-color: inherit;
-    font-weight: 800;
-    font-size: 1rem;
-    color: #046865;
 }
 .cgpa-inputs {
     background-color: inherit;
@@ -81,10 +67,10 @@ button{
 }
 .inputs {
     background-color: inherit;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    align-items: center;
     width: 100%;
-    gap: 10%;
+    gap: 5%;
 }
 .inputs input,
 .cgpa-inputs input {
@@ -94,6 +80,19 @@ button{
     outline: none;
     font-weight: 700;
     font-size: 0.8rem;
+    color: #046865;
+}
+.inputs .credits {
+    width: 50%;
+}
+.inputs .subjectName{
+    width: 100%;
+}
+.inputs .options {
+    width: 50%;
+    height: 30px;
+    border: none;
+    outline: none;
     color: #046865;
 }
 .credits {
@@ -175,34 +174,16 @@ button{
     font-size:2rem;
     flex-direction: column;
 }
-@media (max-width:425px){
+@media (max-width:500px){
     .GPA-container{
-        width: 80%;
-    }
-    .inputs{
-        gap: 8%;
+        width: 90%;
     }
     .credits {
         width: 100%;
     }
     .subjectName{
         font-size: .5rem;
-        width: 120%;
-    }
-    .options {
-        width: 80%;
-    }
-}
-@media (max-width:768px){
-    .GPA-container{
-        width: 80%;
-    }
-    .credits {
-        width: 70%;
-    }
-    .subjectName{
-        font-size: .5rem;
-        width: 120%;
+        width: 100%;
     }
     .options {
         width: 60%;
