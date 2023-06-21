@@ -6,7 +6,7 @@ import React from "react";
 export default function CGPA(props) {
     const dataResult = document.querySelector("[data-result]");
     const [Input, setInput] = React.useState([{ semNo: "", credit: "" }]);
-
+    const [formError,setFormError]= React.useState("")
     function handlechange(event, index) {
         const data = [...Input];
         data[index][event.target.name] = event.target.value;
@@ -38,8 +38,12 @@ export default function CGPA(props) {
         data.splice(index,1)
         setInput(data)
     }
+    function handleBlur(index){
+        (Input[index]["semNo"].length==0 || Input[index]["credit"].length==0)?setFormError("Empty Fields"):setFormError("")
+    }
     return (
         <form className="GPA-container">
+            <div className="errors">{formError}</div>
             <h3>Cumulative GPA</h3>
             {Input &&
                 Input.map((input, id) => {
@@ -51,6 +55,7 @@ export default function CGPA(props) {
                             valueCredit={input.credit}
                             change={handlechange}
                             handleDelete={TrashClicked}
+                            blur={handleBlur}
                         />
                     );
                 })}

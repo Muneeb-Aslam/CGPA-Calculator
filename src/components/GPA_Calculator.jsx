@@ -6,6 +6,7 @@ import React from "react";
 export default function GPA(props) {
     const Grades = {"A":4,"B+":3.5,"B":3,"C+":2.5,"C":2,"D+":1.5,"D":1,"F":0}
     const [Input, setInput] = React.useState([{ name: "", grade: "A", credit: "" }]);
+    const [formError,setFormError]= React.useState("")
     const dataResult = document.querySelector("[data-result]");
     const handleClick = (e) => {
         e.preventDefault();
@@ -41,12 +42,16 @@ export default function GPA(props) {
         data.splice(index,1)
         setInput(data)
     }
+    function handleBlur(index){
+        (Input[index]["name"].length==0 || Input[index]["credit"].length==0)?setFormError("Empty Fields"):setFormError("")
+    }
     return (
         <form className="GPA-container">
+            <div className="errors">{formError}</div>
             <h3>Semester GPA</h3>
             {Input.map((items, id) => {
                 return <InputGPA key={id} index={id} change={handleChange} valueName={items.name} valueGrade={items.grade} 
-                valueCredit={items.credit} handleDelete={TrashClicked}/>
+                valueCredit={items.credit} handleDelete={TrashClicked} blur={handleBlur}/>
             })}
             <div className="icons">
                 <div className="add" onClick={addCourse}>

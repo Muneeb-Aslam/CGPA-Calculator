@@ -11,6 +11,7 @@ function InputGPA(props) {
                 name="name"
                 value={props.valueName}
                 onChange={event=>props.change(event,props.index)}
+                onBlur={()=>props.blur(props.index)}
             />
             <select className="options" name="grade" id="" value={props.valueGrade} 
             onChange={event=>props.change(event,props.index)}>
@@ -24,7 +25,7 @@ function InputGPA(props) {
                 <option value="F">F</option>
             </select>
             <input className="credits" type="text" placeholder="Credits" name="credit" value={props.valueCredit} 
-            onChange={event=>props.change(event,props.index)}/>
+            onChange={event=>props.change(event,props.index)} onBlur={()=>props.blur(props.index)}/>
             <div className="deleteCourse" onClick={event=>props.handleDelete(event,props.index)}>
                 <FontAwesomeIcon icon={faTrash} className="trashicon"/>
             </div>
@@ -42,6 +43,7 @@ function InputCGPA(props) {
                 type="text"
                 placeholder="Semester No"
                 onChange={(event) => props.change(event,index)}
+                onBlur={()=>props.blur(props.index)}
             />
             <input
                 className="credits"
@@ -50,6 +52,7 @@ function InputCGPA(props) {
                 placeholder="SGPA"
                 value={props.valueCredit}
                 onChange={(event) => props.change(event,index)}
+                onBlur={()=>props.blur(props.index)}
             />
             <div className="deleteCourse">
                 <FontAwesomeIcon icon={faTrash} className="trashicon" onClick={event=>props.handleDelete(event,props.index)}/>
